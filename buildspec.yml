@@ -4,14 +4,14 @@ phases:
     runtime-versions:
       python: 3.7
     commands:
-      -  pip install --upgrade pip
-      -  pip install -r requirements.txt
-      -  pip install  pylint
+       pip install --upgrade pip
+       pip install -r requirements.txt
+       pip install  pylint
   pre_build:
     commands:
-      -  python --version
-      -  pylint $CODEBUILD_SRC_DIR/job/*.py
-      -  pylint $CODEBUILD_SRC_DIR/jobapp/*.py
+       python --version
+       pylint $CODEBUILD_SRC_DIR/job/*.py
+       pylint $CODEBUILD_SRC_DIR/jobapp/*.py
 artifacts:
   files:
-    - '**/*'
+    '**/*'
