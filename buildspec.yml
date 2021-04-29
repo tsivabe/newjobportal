@@ -4,16 +4,16 @@ phases:
     runtime-versions:
       python: 3.7
     commands:
-      - pip3 install --upgrade pip
+      - pip install --upgrade pip
     
     # Install dependencies needed for running the static analysis
-      - pip3 install -r requirements.txt
-      - pip3 install  pylint
+      - pip install -r requirements.txt
+      - pip install  pylint
   pre_build:
     commands:
       - python --version
-      - pylint $CODEBUILD_SRC_DIR/*.py
-      - pylint $CODEBUILD_SRC_DIR/job/*.py
+      - pylint $CODEBUILD_SRC_DIR/environment/newjobportal/job/*.py
+      - pylint $CODEBUILD_SRC_DIR/environment/newjobportal/jobapp/*.py
      artifacts:
        files:
           - '**/*'
