@@ -5,8 +5,6 @@ phases:
       python: 3.7
     commands:
        pip install --upgrade pip
-    
-    # Install dependencies needed for running the static analysis
        pip install -r requirements.txt
        pip install  pylint
   pre_build:
