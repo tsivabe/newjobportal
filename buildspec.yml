@@ -10,8 +10,8 @@ phases:
   pre_build:
     commands:
        python --version
-       pylint $CODEBUILD_SRC_DIR/environment/newjobportal/*.py
-       pylint $CODEBUILD_SRC_DIR/environment/newjobportal/job/*.py
+       pylint $CODEBUILD_SRC_DIR/*.py
+       pylint $CODEBUILD_SRC_DIR/job/*.py
      artifacts:
        files:
           - '**/*'
