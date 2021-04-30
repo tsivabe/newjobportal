@@ -112,6 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+SESSION_COOKIE_SECURE = False
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
