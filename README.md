@@ -1,47 +1,52 @@
-# Job Portal
-Django Job Portal.  
+
+Python Django JobPortal Website
+===============================
+
+Step1: Create a project folder and clone the repository
+
+    git clone git@github.com:x20182473/newjobportal.git
+
+Step2: Activate virtual environment to avoid breaking your internal packages
+    virtualenv env
+   source env/bin/activate
+
+Step3: install pre-requisites:
+    pip install -r requirements.txt
+
+ Website runs with Amazon RDS (Postgres Database)
+ Configure the database setting in settings.py (update the below parametes based on your setup)
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'database',
+        'HOST': 'database1.cpqkd85h5c1y.us-east-1.rds.amazonaws.com',
+        'PORT': '5432',
 
 
-## Installation
-open terminal and type
-
-## Install requirements
-
-```
-pip install -r requirements.txt
-```
-## Database
-
-```
-Set the database from settings.py
-```
-python manage.py makemigrations
+python manage.py makemigrations 
 python manage.py migrate
-```
 
-## Collects all static files in your apps
+Step4: Collect static content to the application
 
 python manage.py collectstatic
 
-## Run the server
-```
-python manage.py runserver
-```
+Step5: run the server locally to validate
 
-![Settings Window](https://raw.github.com/Sany07/Django-Job-Portal/master/screenshots/screencapture-127-0-0-1-8000-2020-05-08-17_03_46.png)
+python manage.py runserver 0.0.0.0:8080
 
-![Settings Window](https://raw.github.com/Sany07/Django-Job-Portal/master/screenshots/screencapture-127-0-0-1-8000-jobs-2020-05-08-17_40_01.png)
 
-![Settings Window](https://raw.github.com/Sany07/Django-Job-Portal/master/screenshots/screencapture-127-0-0-1-8000-job-79-2020-05-08-16_59_55.png)
+Prepare the server for Elastic bean stack deployment by setting the config filee
 
-![Settings Window](https://raw.github.com/Sany07/Django-Job-Portal/master/screenshots/screencapture-127-0-0-1-8000-job-create-2020-05-08-17_00_46.png)
+Add __pycache__/ on .gitignore
 
-![Settings Window](https://raw.github.com/Sany07/Django-Job-Portal/master/screenshots/screencapture-127-0-0-1-8000-dashboard-2020-05-08-17_01_07.png)
+Launch the application on EBS by creating the Pipeline:
+1) Create EBS environment and application:
 
-![Settings Window](https://raw.github.com/Sany07/Django-Job-Portal/master/screenshots/screencapture-127-0-0-1-8000-dashboard-employer-job-54-applicants-2020-05-08-17_01_34.png)
+2) Create Pipeline
+map the pipeline to github repository
+create deploy project
+create teh code pipeline
 
-<div align="center">
-    <h3>========Thank You=========</h3>
-</div>
-
-# newjobportal
